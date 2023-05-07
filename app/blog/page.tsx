@@ -1,7 +1,7 @@
 const page = () => {
   return (
     <div>
-      記事一覧
+      記事
     </div>
   );
 }
