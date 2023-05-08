@@ -30,7 +30,7 @@ module.exports = {
         default: "1",
       },
       maxWidth: {
-        inner: "1000px",
+        inner: "1160px",
       },
       height: {
         headerHeightPC: "100px",

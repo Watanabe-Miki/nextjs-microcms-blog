@@ -44,9 +44,9 @@
   padding: 1em;
   width: 100%;
   background-color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(122, 123, 179, 0.25), 0 4px 6px -4px rgba(122, 123, 179, 0.25);
+  box-shadow: 0 10px 15px -3px rgba(122, 123, 179, 0.25), 0 4px 6px -4px hwb(239 48% 30% / 0.25);
   transition: transform 0.5s ease;
 }
 
@@ -60,7 +60,7 @@
   height: auto;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   margin-right: 2em;
   margin-bottom: 1em;
 } 
@@ -76,7 +76,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   overflow: hidden;
 }
 
@@ -93,16 +93,10 @@
 /* SideBar */
 .sideBar {
   display: block;
-  padding: 1em;
+  padding: 1.2em 1em 2em;
   width: 100%;
   background-color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: 0 10px 15px -3px rgba(122, 123, 179, 0.25), 0 4px 6px -4px rgba(122, 123, 179, 0.25);
-}
-
-@media screen and (min-width: 1024px) {
-  .sideBar {
-    padding: 1.5em;
-  }
 }

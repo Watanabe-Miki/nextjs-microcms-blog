@@ -19,7 +19,7 @@ const Tag = ({ tag }: Props) => {
           alt="タグ"
         />
       </div>
-      <div>{tag}</div>
+      <div className="text-sm">{tag}</div>
     </div>
   );
 }

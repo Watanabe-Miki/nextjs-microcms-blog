@@ -33,7 +33,8 @@ export default function RootLayout({
       <body>
         <Header />
         <main className="mt-headerHeightMD md:mt-headerHeightPC">
-          {children}</main>
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { CategoryType, TagType } from "@/types/blog"
 import Category from "../elements/Category"
 import Tag from "../elements/Tag"
@@ -13,18 +14,43 @@ const SideBar = ({ categories, tags }: Props) => {
   
   return (
     <>
-      <div className="mb-10">
-        <div className="mb-4 text-center">
-          <h2 className={styles.heading_ja}>Category</h2>
-        </div>
+      <div className="mb-6">
         <div className={styles.sideBar}>
+          <div className="mb-6 bg-[#f9f9f9] p-2 rounded-[0.25em] text-center">
+            <h2 className={styles.heading_ja}>About</h2>
+          </div>
+          <div className="relative h-auto mb-6 ">
+            <Image
+              src="/sidebar/no-img.jpg"
+              width={185}
+              height={116}
+              alt="プロフィール"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'cover',
+              }}
+            />
+          </div>
+          <div>
+            <p className="text-xl font-medium text-center">Miki</p>
+            <br />
+            <p>Webサイトを作っています。</p>
+            <p>Next.js,TypeScriptが最近多め。<br /> でもまだまだ半人前です。</p>
+            <p>勉強メモと公開備忘録としてこのブログを開設しました。</p>
+          </div>
+        </div>
+      </div>
+      <div className="mb-6">
+        <div className={styles.sideBar}>
+          <div className="mb-6 bg-[#f9f9f9] p-2 rounded-[0.25em] text-center">
+            <h2 className={styles.heading_ja}>Category</h2>
+          </div>
           <ul>
             {categories.map((category: CategoryType) => {
               return (
                 <li key={category.id} className="mb-4">
-                  <Link
-                    href={`/category/${category.id}`}
-                  >
+                  <Link href={`/category/${category.id}`}>
                     <Category category={category.tag} />
                   </Link>
                 </li>
@@ -33,26 +59,26 @@ const SideBar = ({ categories, tags }: Props) => {
           </ul>
         </div>
       </div>
-      <div className="mb-10">
-        <div className="mb-4 text-center">
-          <h2 className={styles.heading_ja}>Tag</h2>
-        </div>
+      <div className="mb-6">
         <div className={styles.sideBar}>
-          <ul>
+          <div className="mb-6 bg-[#f9f9f9] p-2 rounded-[0.25em] text-center">
+            <h2 className={styles.heading_ja}>Tag</h2>
+          </div>
+          <ul className="flex flex-wrap">
             {tags.map((tag: TagType) => {
               return (
-                <li key={tag.id} className="mb-4">
+                <li key={tag.id} className="mb-4 mr-4">
                   <Link href={`/tag/${tag.id}`}>
                     <Tag tag={tag.name} />
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default SideBar;
