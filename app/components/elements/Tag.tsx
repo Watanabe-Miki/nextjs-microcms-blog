@@ -13,7 +13,7 @@ const Tag = ({ tag }: Props) => {
           width={64}
           height={64}
           style={{
-            width: "100%",
+            width: "1em",
             height: "1em",
           }}
           alt="タグ"

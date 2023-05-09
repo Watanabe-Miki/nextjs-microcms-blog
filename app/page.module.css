@@ -95,8 +95,10 @@
   display: block;
   padding: 1.2em 1em 2em;
   width: 100%;
+  min-width: 270px;
   background-color: #fff;
   border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: 0 10px 15px -3px rgba(122, 123, 179, 0.25), 0 4px 6px -4px rgba(122, 123, 179, 0.25);
+  margin-bottom: 1.5rem;
 }
