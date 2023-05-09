@@ -1,10 +1,10 @@
-import Image from "next/image"
-import Link from "next/link"
-import Category from "./Category"
-import DateTime from "./DateTime"
-import Tag from "./Tag"
-import { TagType } from "@/types/blog"
-import styles from "../../page.module.css"
+import Image from "next/image";
+import Link from "next/link";
+import Category from "./Category";
+import FormatDate from "./FormatDate";
+import Tag from "./Tag";
+import { TagType } from "@/types/blog";
+import styles from "../../page.module.css";
 
 interface Props {
   id: string;
@@ -16,16 +16,15 @@ interface Props {
   tags: TagType[];
 }
 
- const BlogCard = ({
-   id, 
-   title, 
-   imagePath, 
-   category, 
-   date, 
-   upDate, 
-   tags,
-  }: Props) => {
-
+const BlogCard = ({
+  id,
+  title,
+  imagePath,
+  category,
+  date,
+  upDate,
+  tags,
+}: Props) => {
   return (
     <Link href={`/blog/${id}`} className={styles.blogCard}>
       <div className="md:flex">
@@ -58,13 +57,13 @@ interface Props {
                   width={64}
                   height={64}
                   style={{
-                    width: "100%",
+                    width: "1em",
                     height: "1em",
                   }}
                   alt="投稿日"
                 />
               </div>
-              <DateTime datetime={date} />
+              <FormatDate datetime={date} />
             </span>
             <span className="text-right flex items-center">
               <div className="relative h-auto mr-[0.5em]">
@@ -73,19 +72,19 @@ interface Props {
                   width={64}
                   height={64}
                   style={{
-                    width: "100%",
+                    width: "1em",
                     height: "1em",
                   }}
                   alt="更新日"
                 />
               </div>
-              <DateTime datetime={upDate} />
+              <FormatDate datetime={upDate} />
             </span>
           </div>
         </div>
       </div>
     </Link>
   );
-}
+};
 
-export default BlogCard;  
+export default BlogCard;

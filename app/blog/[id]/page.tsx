@@ -1,28 +1,28 @@
-import { notFound } from "next/navigation"
-import Image from "next/image"
-import { getDetail, getList } from "@/libs/microcms"
-import { highlightCode } from "@/libs/highlightCode"
-import type { BlogType, CategoryType, TagType } from "@/types/blog"
-import DateTime from "@/app/components/elements/DateTime"
-import Category from "@/app/components/elements/Category"
-import Tag from "@/app/components/elements/Tag"
-import styles from "../../page.module.css"
-import "highlight.js/styles/hybrid.css"
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { getDetail, getList } from "@/libs/microcms";
+import { highlightCode } from "@/libs/highlightCode";
+import type { BlogType, TagType } from "@/types/blog";
+import FormatDate from "@/app/components/elements/FormatDate";
+import Category from "@/app/components/elements/Category";
+import Tag from "@/app/components/elements/Tag";
+import styles from "../../page.module.css";
+import "highlight.js/styles/hybrid.css";
 
 type paramsType = {
-  id: string
+  id: string;
 };
 
 export async function generateStaticParams(): Promise<paramsType[]> {
-  const { contents } = await getList()
+  const { contents } = await getList();
 
   const paths = contents.map((post: BlogType) => {
     return {
       id: post.id,
-    }
-  })
+    };
+  });
 
-  return [...paths]
+  return [...paths];
 }
 
 // titleタグに記事のタイトルを動的に入れる
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: paramsType }) {
 
   return {
     title: pageTitle.title,
-  }
+  };
 }
 
 export default async function StaticDetailPage({
@@ -41,14 +41,14 @@ export default async function StaticDetailPage({
 }) {
   const post: BlogType = await getDetail(id);
   const body = highlightCode(post.content);
-  const tags = post.tag
-  
+  const tags = post.tag;
+
   if (!tags) {
-    return null
+    return null;
   }
-  
+
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -91,13 +91,13 @@ export default async function StaticDetailPage({
                       width={64}
                       height={64}
                       style={{
-                        width: "100%",
+                        width: "1em",
                         height: "1em",
                       }}
                       alt="投稿日"
                     />
                   </div>
-                  <DateTime datetime={post.publishedAt ?? ""} />
+                  <FormatDate datetime={post.publishedAt ?? ""} />
                 </span>
                 <span className="text-right flex items-center">
                   <div className="relative h-auto mr-[0.5em]">
@@ -106,13 +106,13 @@ export default async function StaticDetailPage({
                       width={64}
                       height={64}
                       style={{
-                        width: "100%",
+                        width: "1em",
                         height: "1em",
                       }}
                       alt="更新日"
                     />
                   </div>
-                  <DateTime datetime={post.revisedAt ?? ""} />
+                  <FormatDate datetime={post.revisedAt ?? ""} />
                 </span>
               </div>
             </div>
