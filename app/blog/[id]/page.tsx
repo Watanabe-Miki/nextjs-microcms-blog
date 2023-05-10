@@ -62,14 +62,14 @@ export default async function StaticDetailPage({
                 "0 10px 15px -3px rgba(122, 123, 179, 0.25), 0 4px 6px -4px rgba(122, 123, 179, 0.25)",
             }}
           >
-            <div className="mb-7">
+            <div className="mb-4 md:mb-7">
               <h1 className={styles.heading_ja}>{post.title}</h1>
             </div>
-            <div className="flex">
-              <div className="mb-7 mr-[2em]">
+            <div className="md:flex">
+              <div className="mb-4 md:mb-7 mr-[2em]">
                 <Category category={post.category?.tag ?? ""} />
               </div>
-              <div className="mb-7 mr-auto">
+              <div className="mb-4 md:mb-7 mr-auto">
                 <ul className="flex items-center">
                   {tags.map((tag: TagType) => {
                     return (
