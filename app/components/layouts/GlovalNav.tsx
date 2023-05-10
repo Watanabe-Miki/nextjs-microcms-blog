@@ -15,7 +15,7 @@ const GlovalNav = ({ className }: Props) => {
         </li>
         <li>
           <Link href="/">
-            私について
+            このブログについて
           </Link>
         </li>
         <li>
