@@ -2,7 +2,7 @@ import { getList } from "@/libs/microcms";
 import type { BlogType } from "@/types/blog";
 import BlogCard from "../components/elements/BlogCard";
 import SideBar from "../components/layouts/SideBar";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 
 export default async function BlogList() {
   const { contents, categories, tags } = await getList();
