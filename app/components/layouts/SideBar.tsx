@@ -18,7 +18,7 @@ const SideBar = ({ categories, tags }: Props) => {
         <div className="mb-6 bg-[#f9f9f9] p-2 rounded-[0.25em] text-center">
           <h2 className={styles.heading_ja}>About</h2>
         </div>
-        <div className="relative h-auto mb-6 ">
+        <div className="relative h-auto mb-6">
           <Image
             src="/sidebar/no-img.jpg"
             width={185}
