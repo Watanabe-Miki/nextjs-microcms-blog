@@ -14,13 +14,13 @@ const GlovalNav = ({ className }: Props) => {
           </Link>
         </li>
         <li>
-          <Link href="/about">
+          <Link href="/overview">
             このブログについて
           </Link>
         </li>
         <li>
-          <Link href="/works">
-            作ったもの
+          <Link href="/blog">
+            記事一覧
           </Link>
         </li>
       </ul>
