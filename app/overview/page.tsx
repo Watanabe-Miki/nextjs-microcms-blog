@@ -22,15 +22,11 @@ export default function Page() {
             <p>Jamstack開発などのモダン技術に関わらせて頂いて3ヶ月。</p>
             <br />
             <p>
-              はじめてその技術に触れた時は、すごく驚きました。
-              <br />
-              ここまで時代が進んだのか！と（笑）。
+              はじめてその技術に触れた時は、すごく驚きました。ここまで時代が進んだのか!!と(笑)。
             </p>
             <br />
             <p>
-              これでいろいろ作れたら楽しいだろうなぁと、非常に興味を持ちました。
-              <br />
-              そんな中で勉強した内容のまとめに何か作ってみよう！と思い立ったのがきっかけです。
+              これで何か作れるようになりたい。<br />勉強したことのアウトプットとして何か作ってみよう！<br />そう思い立ったのがきっかけです。
             </p>
             <br />
             <p>
@@ -40,10 +36,10 @@ export default function Page() {
         </div>
         <div className="mb-10">
           <h2 className="text-lg font-semibold mb-4">
-            ブログで使用した主な技術とバージョン
+            使用している主な技術
           </h2>
           <div>
-            <p className="mb-4">Next.jsは app Directory を採用しています。</p>
+            <p className="mb-4">Next.jsはapp Directoryを採用しています。</p>
             <ul>
               <li className="list-disc list-inside">React: 18.2.0</li>
               <li className="list-disc list-inside">
