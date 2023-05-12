@@ -37,6 +37,9 @@ export const getList = async (queries?: MicroCMSQueries) => {
     queries,
   });
 
+  // loadingUI 確認用
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
   return {
     contents: listData.contents,
     categories: categoryData.contents, 
@@ -54,9 +57,6 @@ export const getDetail = async (
   contentId,
   queries,
  });
-
- // データの取得が目視しやすいよう明示的に遅延効果を追加
-//  await new Promise((resolve) => setTimeout(resolve, 3000));
 
  return detailData;
 };
