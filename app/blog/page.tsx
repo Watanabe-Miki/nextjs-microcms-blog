@@ -16,7 +16,7 @@ export default async function BlogList() {
       <div className="mb-8 text-center">
         <h2 className={styles.heading_ja}>記事一覧</h2>
       </div>
-      {contents.length === 0 ? (
+      {!contents || contents.length === 0 ? (
         <p className="text-center py-11">記事がありません。</p>
       ) : (
         <ul>

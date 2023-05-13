@@ -38,11 +38,11 @@ export default async function StaticPage() {
               <div className="mb-8 text-center">
                 <h2 className={styles.heading_ja}>新着記事一覧</h2>
               </div>
-              {contents.length === 0 ? (
+              {!contents || contents.length === 0 ? (
                 <p className="text-center py-11">記事がありません。</p>
               ) : (
                 <ul>
-                  {contents.map((post: BlogType) => {
+                  {contents.slice(0, 6).map((post: BlogType) => {
                     return (
                       <li key={post.id} className="mb-6">
                         <BlogCard
