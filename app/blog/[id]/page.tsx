@@ -43,7 +43,7 @@ export default async function StaticDetailPage({
   const body = highlightCode(post.content);
   const tags = post.tag;
 
-  if (!tags) {
+  if (!tags || tags.length === 0) {
     return null;
   }
 
