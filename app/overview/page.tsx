@@ -16,6 +16,34 @@ export default function Page() {
           <h1 className={styles.heading_ja}>このブログのご紹介</h1>
           <span>2023.05</span>
         </div>
+        <div className="mb-10 md:hidden">
+          <h2 className="text-lg font-semibold mb-4">私について</h2>
+          <div>
+            <div className="relative h-auto mb-6 rounded-lg overflow-hidden">
+              <Image
+                src="/common/usagi02.png"
+                width={185}
+                height={116}
+                alt="プロフィール"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+            <p>名前はMikiです。</p>
+            <p>Webサイトを作っています。</p>
+            <br />
+            <p>
+              Next.js,TypeScriptが最近多め。
+              <br /> でもまだまだ半人前です。
+            </p>
+            <p>勉強メモと公開備忘録としてこのブログを開設しました。</p>
+            <br />
+            <p>つたない内容もあるかと思いますが、誰かのお役に立てれば嬉しいです!!</p>
+          </div>
+        </div>
         <div className="mb-10">
           <h2 className="text-lg font-semibold mb-4">制作のきっかけ</h2>
           <div>
@@ -26,7 +54,11 @@ export default function Page() {
             </p>
             <br />
             <p>
-              これで何か作れるようになりたい。<br />勉強したことのアウトプットとして何か作ってみよう！<br />そう思い立ったのがきっかけです。
+              これで何か作れるようになりたい。
+              <br />
+              勉強したことのアウトプットとして何か作ってみよう！
+              <br />
+              そう思い立ったのがきっかけです。
             </p>
             <br />
             <p>
@@ -35,9 +67,7 @@ export default function Page() {
           </div>
         </div>
         <div className="mb-10">
-          <h2 className="text-lg font-semibold mb-4">
-            使用している主な技術
-          </h2>
+          <h2 className="text-lg font-semibold mb-4">使用している主な技術</h2>
           <div>
             <p className="mb-4">Next.jsはapp Directoryを採用しています。</p>
             <ul>
