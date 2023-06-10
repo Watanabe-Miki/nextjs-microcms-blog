@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Category from "./Category";
-import FormatDate from "./FormatDate";
+import { format } from "date-fns";
 import Tag from "./Tag";
 import { TagType } from "@/types/blog";
 import styles from "../../page.module.css";
@@ -63,7 +63,7 @@ const BlogCard = ({
                   alt="投稿日"
                 />
               </div>
-              <FormatDate datetime={date} />
+              <div>{date && format(new Date(date), "yyyy-MM-dd HH:mm")}</div>
             </span>
             <span className="text-right flex items-center">
               <div className="relative h-auto mr-[0.5em]">
@@ -78,7 +78,7 @@ const BlogCard = ({
                   alt="更新日"
                 />
               </div>
-              <FormatDate datetime={upDate} />
+              <div>{upDate && format(new Date(upDate), "yyyy-MM-dd HH:mm")}</div>
             </span>
           </div>
         </div>

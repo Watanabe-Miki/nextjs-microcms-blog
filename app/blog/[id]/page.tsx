@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { format } from "date-fns";
 import { getDetail, getList } from "@/libs/microcms";
 import { highlightCode } from "@/libs/highlightCode";
 import type { BlogType, TagType } from "@/types/blog";
-import FormatDate from "@/app/components/elements/FormatDate";
 import Category from "@/app/components/elements/Category";
 import Tag from "@/app/components/elements/Tag";
 import styles from "../../page.module.css";
@@ -47,9 +47,7 @@ export default async function StaticDetailPage({
     return null;
   }
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) return notFound();
 
   return (
     <>
@@ -95,7 +93,7 @@ export default async function StaticDetailPage({
                   alt="投稿日"
                 />
               </div>
-              <FormatDate datetime={post.publishedAt ?? ""} />
+              {post && format(new Date(post.publishedAt ?? ""), 'yyyy-MM-dd HH:mm')}
             </span>
             <span className="text-right flex items-center">
               <div className="relative h-auto mr-[0.5em]">
@@ -110,7 +108,7 @@ export default async function StaticDetailPage({
                   alt="更新日"
                 />
               </div>
-              <FormatDate datetime={post.revisedAt ?? ""} />
+              {post && format(new Date(post.revisedAt ?? ""), 'yyyy-MM-dd HH:mm')}
             </span>
           </div>
         </div>
