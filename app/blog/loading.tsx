@@ -19,12 +19,7 @@ const Loading = () => {
                 <LoadingBlogCard />
                 <LoadingBlogCard />
                 <LoadingBlogCard />
-                <LoadingBlogCard />
-                <LoadingBlogCard />
               </div>
-            </div>
-            <div className="hidden md:block w-1/4">
-              <LoadingSideBar />
             </div>
           </div>
         </div>
