@@ -1,5 +1,4 @@
 import LoadingBlogCard from "../components/layouts/LoadingBlogCard";
-import LoadingSideBar from "../components/layouts/LoadingSideBar";
 import styles from "../page.module.css";
 
 const Loading = () => {
