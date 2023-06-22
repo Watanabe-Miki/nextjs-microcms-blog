@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 export default async function BlogList() {
   const { contents } = await getList();
+  console.log(contents)
 
   return (
     <>
@@ -20,7 +21,7 @@ export default async function BlogList() {
         <p className="text-center py-11">記事がありません。</p>
       ) : (
         <ul>
-          {contents.map((post: BlogType) => {
+          {contents.slice(0, 6).map((post: BlogType) => {
             return (
               <li key={post.id} className="mb-6">
                 <BlogCard
