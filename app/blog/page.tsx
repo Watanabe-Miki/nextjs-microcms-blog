@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 
 export default async function BlogList() {
   const { contents } = await getList();
-  console.log(contents)
 
   return (
     <>
@@ -23,7 +22,7 @@ export default async function BlogList() {
         <ul>
           {contents.slice(0, 6).map((post: BlogType) => {
             return (
-              <li key={post.id} className="mb-6">
+              <li key={post.id} className="mb-6 last:mb-none">
                 <BlogCard
                   id={post.id}
                   title={post.title}

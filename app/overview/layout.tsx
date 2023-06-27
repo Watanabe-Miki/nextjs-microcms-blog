@@ -19,9 +19,9 @@ export default async function OverviewLayout({
     <section>
       <div className="bg-[#f9f9f9] py-24">
         <div className="inner">
-          <div className="md:flex">
-            <div className="md:w-3/4 md:mr-10">{children}</div>
-            <div className="hidden md:block w-1/4">
+          <div className="lg:flex">
+            <div className="lg:w-[70%] lg:mr-10 mb-6 lg:mb-none">{children}</div>
+            <div className="lg:w-[30%]">
               <SideBar categories={categories} tags={tags} />
             </div>
           </div>
