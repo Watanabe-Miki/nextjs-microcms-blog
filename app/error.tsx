@@ -2,9 +2,9 @@
 
 const Error = ({ error }: { error: Error }) => {
   return (
-    <div>
-      <p className="mt-6 text-center text-red-500">
-        Data fetching in server failed
+    <div className="pt-40 md:pt-50">
+      <p className="text-center text-red-500">
+        サーバーでのデータの取得に失敗しました。
       </p>
     </div>
   );
