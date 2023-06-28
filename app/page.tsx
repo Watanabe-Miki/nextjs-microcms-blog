@@ -4,6 +4,7 @@ import type { BlogType } from "@/types/blog"
 import BlogCard from "./components/elements/BlogCard"
 import SideBar from "./components/layouts/SideBar"
 import styles from "./page.module.css"
+import InputQuery from "./components/elements/InputQuery"
 
 export default async function StaticPage() {
   const { contents, categories, tags } = await getList()
@@ -26,15 +27,20 @@ export default async function StaticPage() {
               src="/main/main.svg"
               width={600}
               height={500}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
               alt="Slolo Delight! - ひとりの愉しみ -"
+              priority
             />
           </div>
         </div>
       </div>
       <div className="bg-[#f9f9f9] py-24">
         <div className="inner">
-          <div className="md:flex">
-            <div className="md:w-3/4 md:mr-10">
+          <div className="lg:flex">
+            <div className="lg:w-[70%] lg:mr-10">
               <div className="mb-8 text-center">
                 <h2 className={styles.heading_ja}>新着記事一覧</h2>
               </div>
@@ -44,7 +50,7 @@ export default async function StaticPage() {
                 <ul>
                   {contents.slice(0, 6).map((post: BlogType) => {
                     return (
-                      <li key={post.id} className="mb-6">
+                      <li key={post.id} className="mb-6 last:mb-none">
                         <BlogCard
                           id={post.id}
                           title={post.title}
@@ -60,7 +66,8 @@ export default async function StaticPage() {
                 </ul>
               )}
             </div>
-            <div className="hidden md:block w-1/4">
+            <div className="lg:w-[30%]">
+              {/* <InputQuery /> */}
               <SideBar categories={categories} tags={tags} />
             </div>
           </div>

@@ -22,20 +22,11 @@ export const client = createClient({
 
 // ブログ一覧を取得
 export const getList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<BlogType>({
-    endpoint: "blogs",
-    queries,
-  });
-
-  const categoryData = await client.getList<CategoryType>({
-    endpoint: "categories",
-    queries,
-  });
-
-  const tagData = await client.getList<TagType>({
-    endpoint: "tags",
-    queries,
-  });
+  const [listData, categoryData, tagData] = await Promise.all([
+    client.getList<BlogType>({ endpoint: "blogs", queries }),
+    client.getList<CategoryType>({ endpoint: "categories", queries }),
+    client.getList<TagType>({ endpoint: "tags", queries })
+  ])
 
   // loadingUI 確認用
   // await new Promise((resolve) => setTimeout(resolve, 2000))

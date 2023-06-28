@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import Category from "./Category";
-import { format } from "date-fns";
 import Tag from "./Tag";
 import { TagType } from "@/types/blog";
+import { format } from "date-fns";
 import styles from "../../page.module.css";
 
-interface Props {
+type BlogCardProps = {
   id: string;
   title: string;
   imagePath: string;
@@ -24,7 +24,7 @@ const BlogCard = ({
   date,
   upDate,
   tags,
-}: Props) => {
+}: BlogCardProps) => {
   return (
     <Link href={`/blog/${id}`} className={styles.blogCard}>
       <div className="md:flex">

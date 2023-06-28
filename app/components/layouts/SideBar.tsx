@@ -5,29 +5,33 @@ import Category from "../elements/Category"
 import Tag from "../elements/Tag"
 import styles from "../../page.module.css"
 
-interface Props {
-  categories: CategoryType[]
-  tags: TagType[]
+interface SideBarProps {
+  categories: CategoryType[];
+  tags: TagType[];
 }
 
-const SideBar = ({ categories, tags }: Props) => {
-  
+const SideBar = ({ 
+  categories, 
+  tags, 
+}: SideBarProps) => {
+
   return (
     <>
       <div className={styles.sideBar}>
         <div className="mb-6 bg-[#f9f9f9] p-2 rounded-[0.25em] text-center">
           <h2 className={styles.heading_ja}>About</h2>
         </div>
-        <div className="relative h-auto mb-6 rounded-sm overflow-hidden">
+        <div className="relative h-auto mb-6 rounded-sm overflow-hidden sm:w-1/2 mx-auto lg:w-full lg:mx-none">
           <Image
             src="/common/usagi02.png"
             width={185}
             height={116}
             alt="プロフィール"
+            priority
             style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'cover',
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
             }}
           />
         </div>
@@ -36,7 +40,10 @@ const SideBar = ({ categories, tags }: Props) => {
           <br />
           <p>Webサイトを作っています。</p>
           <br />
-          <p>Next.js,TypeScriptが最近多め。<br /> でもまだまだ半人前です。</p>
+          <p>
+            Next.js,TypeScriptが最近多め。
+            <br /> でもまだまだ半人前です。
+          </p>
           <p>勉強メモと公開備忘録としてこのブログを開設しました。</p>
           <br />
           <p>時々Web以外の雑記も。</p>

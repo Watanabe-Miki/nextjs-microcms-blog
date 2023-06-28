@@ -23,6 +23,11 @@ const GlovalNav = ({ className }: Props) => {
             記事一覧
           </Link>
         </li>
+        <li>
+          <Link href="/searchList">
+            検索
+          </Link>
+        </li>
       </ul>
     </nav>
   );
