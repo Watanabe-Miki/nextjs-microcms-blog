@@ -16,15 +16,16 @@ export default function Page() {
           <h1 className={styles.heading_ja}>このブログのご紹介</h1>
           <span>2023.05</span>
         </div>
-        <div className="mb-10 md:hidden">
+        <div className="mb-10 lg:hidden">
           <h2 className="text-lg font-semibold mb-4">私について</h2>
           <div>
-            <div className="relative h-auto mb-6 rounded-lg overflow-hidden">
+            <div className="relative h-auto mb-6 rounded-sm overflow-hidden sm:w-1/2 mx-auto lg:w-full lg:mx-none">
               <Image
                 src="/common/usagi02.png"
                 width={185}
                 height={116}
                 alt="プロフィール"
+                priority
                 style={{
                   width: "100%",
                   height: "auto",
@@ -41,7 +42,9 @@ export default function Page() {
             </p>
             <p>勉強メモと公開備忘録としてこのブログを開設しました。</p>
             <br />
-            <p>つたない内容もあるかと思いますが、誰かのお役に立てれば嬉しいです!!</p>
+            <p>
+              つたない内容もあるかと思いますが、誰かのお役に立てれば嬉しいです!!
+            </p>
           </div>
         </div>
         <div className="mb-10">
@@ -106,9 +109,9 @@ export default function Page() {
               <li className="mb-4">
                 <p>microCMS</p>
                 <Link href="https://blog.microcms.io/nextjs13-microcms-rsc/">
-                  <li className="underline text-blue-500">
+                  <p className="underline text-blue-500">
                     microCMSとNext.js13 Server Components
-                  </li>
+                  </p>
                 </Link>
               </li>
               <li className="mb-4">
