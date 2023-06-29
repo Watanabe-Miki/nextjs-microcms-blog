@@ -4,6 +4,7 @@ import type { BlogType } from "@/types/blog"
 import BlogCard from "./components/elements/BlogCard"
 import SideBar from "./components/layouts/SideBar"
 import styles from "./page.module.css"
+import mainview from "../public/main/main.svg"
 import InputQuery from "./components/elements/InputQuery"
 
 export default async function StaticPage() {
@@ -24,7 +25,7 @@ export default async function StaticPage() {
           </div>
           <div className="relative h-auto md:w-3/5 mx-auto lg:mx-none">
             <Image
-              src="/main/main.svg"
+              src={mainview}
               width={600}
               height={500}
               style={{
