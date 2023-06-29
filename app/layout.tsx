@@ -1,19 +1,7 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Merriweather_Sans } from "next/font/google";
+import { notosan, merri } from "./fonts"
 import Header from "./components/layouts/Header";
 import "./globals.css";
-
-const notosan = Noto_Sans_JP ({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-notosan",
-});
-
-const merri = Merriweather_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-merri",
-});
 
 export const metadata: Metadata = {
   title: {
