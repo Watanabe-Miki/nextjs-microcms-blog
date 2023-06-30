@@ -41,7 +41,7 @@ export default async function StaticPage() {
       <div className="bg-[#f9f9f9] py-24">
         <div className="inner">
           <div className="lg:flex">
-            <div className="lg:w-[70%] lg:mr-10">
+            <div className="lg:w-[70%] lg:mr-10 mb-6">
               <div className="mb-8 text-center">
                 <h2 className={styles.heading_ja}>新着記事一覧</h2>
               </div>
