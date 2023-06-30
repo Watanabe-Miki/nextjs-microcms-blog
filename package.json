@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/server": "^11.10.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
     "@heroicons/react": "^2.0.18",
-    "@mantine/core": "^6.0.8",
-    "@mantine/hooks": "^6.0.8",
-    "@mantine/next": "^6.0.8",
+    "@mantine/core": "^6.0.15",
+    "@mantine/hooks": "^6.0.15",
+    "@mantine/next": "^6.0.15",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
