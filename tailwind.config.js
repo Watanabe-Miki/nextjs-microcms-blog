@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        textBase: ["var(--font-notosan), sans-serif"],
+        fontFamilyBase: ["var(--font-notosan), sans-serif"],
       },
       spacing: {
         none: "0px",
@@ -16,9 +16,8 @@ module.exports = {
         headerHeightMD: "80px",
       },
       colors: {
-        main: "#F53838",
+        main: "#7CD9D0",
         textBase: "#4F5665",
-        accent: "#2FAB73",
         bgBase: "#fff",
       },
       zIndex: {
