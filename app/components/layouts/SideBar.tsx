@@ -21,7 +21,7 @@ const SideBar = ({
         <div className="mb-6 bg-[#f9f9f9] p-2 rounded-[0.25em] text-center">
           <h2 className={styles.heading_ja}>About</h2>
         </div>
-        <div className="relative h-auto mb-6 rounded-sm overflow-hidden sm:w-1/2 mx-auto lg:w-full lg:mx-none">
+        <div className="relative h-auto mb-6 rounded-sm overflow-hidden mx-auto sm:w-3/4 md:w-2/3 lg:w-full lg:mx-none">
           <Image
             src="/common/usagi02.png"
             width={185}
