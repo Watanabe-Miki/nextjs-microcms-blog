@@ -1,36 +1,44 @@
 import Link from 'next/link'
+import { links } from '@/libs/links'
 
-interface Props {
-  className: string
+interface GlobalNavProps {
+  variant: "headerNav" | "drawerNav"
 }
 
-const GlovalNav = ({ className }: Props) => {
+const styleVariants = {
+  headerNav: {
+    nav: "h-headerHeightMD md:h-headerHeightPC hidden md:block",
+    ul: "flex justify-center",
+  },
+  drawerNav: {
+    nav: "block md:hidden",
+    ul: "flex flex-col",
+  },
+};
+
+const GlovalNav = ({ variant }: GlobalNavProps) => {
+  const headerNavItemstyle = "relative mr-10 last:mr-none"
+  const commonStyle = "h-headerHeightMD md:h-headerHeightPC flex items-center"
+
+
   return (
-    <nav className={className}>
-      <ul>
-        <li>
-          <Link href="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/overview">
-            このブログについて
-          </Link>
-        </li>
-        <li>
-          <Link href="/blog">
-            記事一覧
-          </Link>
-        </li>
-        <li>
-          <Link href="/searchList">
-            検索
-          </Link>
-        </li>
+    <nav className={styleVariants[variant].nav}>
+      <ul className={styleVariants[variant].ul}>
+        {links.map((link) => (
+          <li 
+            key={link.name} 
+            className={headerNavItemstyle}
+          >
+            <Link 
+              href={`${link.slug}`} 
+              className={commonStyle}>
+              {link.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
-}
+};
 
 export default GlovalNav;

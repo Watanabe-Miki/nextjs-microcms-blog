@@ -27,7 +27,7 @@ export const DrawerNav = () => {
             justifyContent: "center",
           }}
         >
-          <GlovalNav className="drawerNav" />
+          <GlovalNav variant="drawerNav" />
         </div>
       </Drawer>
       <Burger
