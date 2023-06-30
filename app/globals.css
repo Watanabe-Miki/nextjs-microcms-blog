@@ -4,30 +4,43 @@
 
 @layer base {
   body {
-    @apply bg-bgBase text-textBase font-normal font-textBase;
+    @apply bg-bgBase text-textBase font-normal font-fontFamilyBase;
   } 
+
+  /* Layout */
+  .inner {
+    @apply w-full px-4 mx-auto md:px-6 max-w-lg md:max-w-screen-md lg:max-w-inner;
+  }
 }
 
 @layer components {
-  /* Layout */
-  .inner {
-    @apply w-full px-4 mx-auto md:px-6 md:max-w-screen-md lg:max-w-inner;
-  }
 
   /* Header */
-  .headerNav {
+  /* .headerNav {
     @apply h-headerHeightMD md:h-headerHeightPC;
   }
-
-  .headerNav ul {
+  
+  .headerNav li {
+    @apply relative mr-10 last:mr-none;
+  } */
+  
+  
+  /* 振り分け */
+  /* .headerNav ul {
     @apply flex justify-center;
   }
+  
+  .drawerNav ul {
+    @apply flex flex-col;
+  } */
 
-  .headerNav li {
-    @apply relative mr-10 last:mr-none text-[15px] md:text-base;
-  }
 
-  .headerNav li a {
+
+  /* 共通 */
+  /* .headerNav li a {
     @apply h-headerHeightMD md:h-headerHeightPC flex items-center;
   }
+  .drawerNav li a {
+    @apply h-headerHeightMD md:h-headerHeightPC flex items-center;
+  } */
 }
