@@ -1,11 +1,11 @@
-import { BlogType } from "@/types/blog";
-import BlogCard from "./BlogCard";
+import { BlogType } from "@/types/blog"
+import BlogCard from "./BlogCard"
 
-interface Props {
+interface SearchBlogProps {
   searchPost: BlogType
 }
 
-const SearchData = ({ searchPost }: Props) => {
+const SearchBlog = ({ searchPost }: SearchBlogProps) => {
   return (
     <>
       <BlogCard
@@ -18,7 +18,7 @@ const SearchData = ({ searchPost }: Props) => {
         tags={searchPost.tag ?? []}
       />
     </>
-  );
-};
+  )
+}
 
-export default SearchData;
+export default SearchBlog

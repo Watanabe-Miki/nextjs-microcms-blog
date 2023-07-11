@@ -12,9 +12,8 @@ interface SideBarProps {
 
 const SideBar = ({ 
   categories, 
-  tags, 
+  tags,
 }: SideBarProps) => {
-
   return (
     <>
       <div className={styles.sideBar}>
@@ -83,6 +82,6 @@ const SideBar = ({
       </div>
     </>
   );
-}
+};
 
 export default SideBar;

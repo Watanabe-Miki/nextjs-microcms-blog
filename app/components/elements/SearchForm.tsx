@@ -17,7 +17,7 @@ const SearchForm = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const response = await fetch(`../../api/posts/search?query=${query}`);
+    const response = await fetch(`../../api/posts/search?query=${query}`)
     const resultPosts = await response.json()
     
     getSearchResults(resultPosts) 
@@ -43,7 +43,7 @@ const SearchForm = ({
         </div>
         <button
           type="submit"
-          className="text-white bg-[#36b8ad] font-medium rounded-[0.25em] text-sm px-5 py-2 hover: opacity-60"
+          className="text-white bg-main font-medium rounded-[0.25em] text-sm px-5 py-2 hover:opacity-60 transition-opacity"
         >
           検 索
         </button>

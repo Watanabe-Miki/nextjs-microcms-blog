@@ -1,51 +1,44 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState } from "react";
 import type { BlogType } from "@/types/blog";
+import Form from "../components/elements/Form";
 import styles from "../page.module.css"
-import SearchForm from "../components/elements/SearchForm"
-import SearchData from "../components/elements/SearchData"
+import SearchBlog from "../components/elements/SearchBlog"
 
-export default async function SearchList() {
-  const [searchPosts, setSearchPosts] = useState<BlogType[]>([])
-  const [searchQuery, setSearchQuery] = useState<string>('')
+export default function SearchList() {
+  const [query, setQuery] = useState("")
+  const [resultPosts, setResultPosts] = useState<BlogType[]>([])
 
-  // ページがロードする度にブログデータを呼び出す
-  useEffect(() => {
-    const fetchData = async () => {
-      const postResponse = await fetch('../api/posts');
-      const searchPosts = await postResponse.json()
-      setSearchPosts(searchPosts.contents)
-    }
-
-    fetchData()
-  }, [])
+  const handleSearch = async (query: string) => {
+    const response = await fetch(`../../api/posts/search?query=${query}`)
+    const newResultPosts: BlogType[] = await response.json()
+    setQuery(query)
+    setResultPosts(newResultPosts)
+  }
 
   return (
     <>
       <div>
         <div>
-          <SearchForm
-            getSearchResults={(results: BlogType[]) => setSearchPosts(results)}
-            getSearchQuery={(query: string) => setSearchQuery(query)}
-          />
-        </div>
-        <div className="mb-8 text-center">
-          <h2 className={styles.heading_ja}>
-            {`"${searchQuery}"`} を含む記事一覧
-          </h2>
+          <Form onSearch={handleSearch} />
         </div>
         <div>
-          {!searchPosts || searchPosts.length === 0 ? (
+          {!resultPosts || resultPosts.length === 0 ? (
             <p className="text-center py-11">該当する記事がありません。</p>
           ) : (
-            <ul>
-              {searchPosts.map((searchPost: BlogType) => (
-                <li key={searchPost.id} className="mb-6 last:mb-none">
-                  <SearchData searchPost={searchPost} />
-                </li>
-              ))}
-            </ul>
+              <>
+                <div className="mb-8 text-center">
+                  <h2 className={styles.heading_ja}>{`"${query}"`} を含む記事一覧</h2>
+                </div>
+                <ul>
+                  {resultPosts.map((searchPost: BlogType) => (
+                    <li key={searchPost.id} className="mb-6 last:mb-none">
+                      <SearchBlog searchPost={searchPost} />
+                    </li>
+                  ))}
+                </ul>
+              </>
           )}
         </div>
       </div>

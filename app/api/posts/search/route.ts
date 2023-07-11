@@ -10,10 +10,10 @@ export const GET = async (
   // searchParamsにリクエストされたURLをオブジェクトにして渡す
   // searchParamsはユーザーが検索で入力したものをすべて取得してくれる
   const { searchParams } = new URL(request.url)
-  console.log(searchParams.get('query'))
-
+  
   // searchParamsからURLのパラメーターを取得してqueryに代入
   const query = searchParams.get('query')
+  console.log(searchParams.get('query'))
 
   // microCMSのクライアントを使用してデーター取得
   const posts = await client.getList<BlogType>({

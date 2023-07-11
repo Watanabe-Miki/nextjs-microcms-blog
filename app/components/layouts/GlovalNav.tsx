@@ -18,7 +18,8 @@ const styleVariants = {
 
 const GlovalNav = ({ variant }: GlobalNavProps) => {
   const headerNavItemstyle = "relative mr-10 last:mr-none"
-  const commonStyle = "h-headerHeightMD md:h-headerHeightPC flex items-center"
+  const commonStyle =
+    "h-headerHeightMD md:h-headerHeightPC flex items-center hover:opacity-60 transition-opacity";
 
 
   return (
