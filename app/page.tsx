@@ -5,7 +5,6 @@ import BlogCard from "./components/elements/BlogCard"
 import SideBar from "./components/layouts/SideBar"
 import styles from "./page.module.css"
 import mainview from "../public/main/main.svg"
-import InputQuery from "./components/elements/InputQuery"
 
 export default async function StaticPage() {
   const { contents, categories, tags } = await getList()
